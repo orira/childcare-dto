@@ -3,12 +3,12 @@ package com.rsd.childcare.dto.person;
 
 import java.util.List;
 
-import com.rsd.childcare.dto.authentication.AuthenticationDetailsDTO;
+import com.rsd.childcare.dto.authentication.UserDTO;
 
 public class ParentDTO extends PersonDTO{
 	
 	private List<ChildDTO> children;
-	private AuthenticationDetailsDTO authenticationDetails;
+	private UserDTO user;
 	
 	public List<ChildDTO> getChildren() {
 		return children;
@@ -18,11 +18,11 @@ public class ParentDTO extends PersonDTO{
 		this.children = children;
 	}
 
-	public AuthenticationDetailsDTO getAuthenticationDetails() {
-		return authenticationDetails;
+	public UserDTO getUser() {
+		return user;
 	}
 
-	public void setAuthenticationDetails(AuthenticationDetailsDTO authenticationDetails) {
-		this.authenticationDetails = authenticationDetails;
+	public void setUser(UserDTO user) {
+		this.user = user;
 	}	
 }

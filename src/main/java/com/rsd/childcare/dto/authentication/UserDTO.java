@@ -2,7 +2,7 @@ package com.rsd.childcare.dto.authentication;
 
 import com.rsd.childcare.dto.person.ParentDTO;
 
-public class AuthenticationDetailsDTO {
+public class UserDTO {
 	
 	private int id;
 	private String userName;
