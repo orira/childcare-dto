@@ -16,7 +16,7 @@
   </properties>
 
   <dependencies>
-    <!-- Jackson Dependencies -->
+    <!-- Jackson -->
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-asl</artifactId>
