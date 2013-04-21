@@ -9,6 +9,13 @@ public class UserDTO {
 	private String password;
 	private ParentDTO parent;
 	
+	public UserDTO(String userName, String password) {
+		this.userName = userName;
+		this.password = password;
+	}
+	
+	public UserDTO() {}
+
 	public int getId() {
 		return id;
 	}
