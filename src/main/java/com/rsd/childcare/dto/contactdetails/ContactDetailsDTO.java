@@ -11,8 +11,6 @@ public class ContactDetailsDTO {
 	private String primaryEmailAddress;
 	private String secondaryEmailAddress;
 	
-	public ContactDetailsDTO(){}
-
 	public int getId() {
 		return id;
 	}
