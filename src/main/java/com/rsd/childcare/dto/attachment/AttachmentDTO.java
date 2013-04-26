@@ -1,5 +1,7 @@
 package com.rsd.childcare.dto.attachment;
 
+import java.util.Date;
+
 import com.rsd.childcare.dto.person.PersonDTO;
 
 
@@ -9,7 +11,8 @@ public class AttachmentDTO {
 	private String mimeType;
 	private byte[] attachment;
 	private PersonDTO person;
-	
+	private Date creationDate;	
+
 	public int getId() {
 		return id;
 	}
@@ -40,5 +43,13 @@ public class AttachmentDTO {
 
 	public void setPerson(PersonDTO person) {
 		this.person = person;
+	}
+
+	public Date getCreationDate() {
+		return creationDate;
+	}
+	
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
 	}
 }
