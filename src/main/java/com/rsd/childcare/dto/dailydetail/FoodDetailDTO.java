@@ -2,7 +2,6 @@ package com.rsd.childcare.dto.dailydetail;
 
 import com.rsd.childcare.dto.categories.FoodTimeCategory;
 
-
 public class FoodDetailDTO extends DailyDetailDTO{
 
 	private FoodTimeCategory timeCategory;

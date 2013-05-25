@@ -2,6 +2,10 @@ package com.rsd.childcare.dto.dailydetail;
 
 import java.util.Date;
 
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
+
+import com.rsd.childcare.dto.serialiser.CustomTimeDeserialiser;
+
 public class MedicineDetailDTO extends DailyDetailDTO{
 
 	private Date administeredTime;
@@ -9,6 +13,7 @@ public class MedicineDetailDTO extends DailyDetailDTO{
 	private String dosage;
 	private String medicine;
 
+	@JsonDeserialize(using = CustomTimeDeserialiser.class)
 	public Date getAdministeredTime() {
 		return administeredTime;
 	}

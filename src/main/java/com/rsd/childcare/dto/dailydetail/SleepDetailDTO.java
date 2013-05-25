@@ -3,6 +3,9 @@ package com.rsd.childcare.dto.dailydetail;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
+import com.rsd.childcare.dto.serialiser.CustomTimeDeserialiser;
+
 public class SleepDetailDTO extends DailyDetailDTO{
 
 	private Date sleptTime;
@@ -15,6 +18,7 @@ public class SleepDetailDTO extends DailyDetailDTO{
 		return sleptTime;
 	}
 
+	@JsonDeserialize(using = CustomTimeDeserialiser.class)
 	public void setSleptTime(Date sleptTime) {
 		this.sleptTime = sleptTime;
 	}
@@ -27,6 +31,7 @@ public class SleepDetailDTO extends DailyDetailDTO{
 		this.sleptAuthoriser = sleptAuthoriser;
 	}
 
+	@JsonDeserialize(using = CustomTimeDeserialiser.class)
 	public Date getAwokeTime() {
 		return awokeTime;
 	}
@@ -43,7 +48,7 @@ public class SleepDetailDTO extends DailyDetailDTO{
 		this.awokeAuthoriser = awokeAuthoriser;
 	}
 	
-	public long getTotalSleptTime() {
+	public long returnTotalSleptTime() {
 		long duration = awokeTime.getTime() - sleptTime.getTime();
 		
 		if(TimeUnit.MILLISECONDS.toHours(duration) >= 1) {

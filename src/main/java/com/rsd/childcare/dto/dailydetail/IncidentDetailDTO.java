@@ -2,6 +2,10 @@ package com.rsd.childcare.dto.dailydetail;
 
 import java.util.Date;
 
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
+
+import com.rsd.childcare.dto.serialiser.CustomTimeDeserialiser;
+
 public class IncidentDetailDTO extends DailyDetailDTO{
 	
 	private String incidentRecorder;
@@ -16,6 +20,7 @@ public class IncidentDetailDTO extends DailyDetailDTO{
 		this.incidentRecorder = incidentRecorder;
 	}
 
+	@JsonDeserialize(using = CustomTimeDeserialiser.class)
 	public Date getIncidentTime() {
 		return incidentTime;
 	}

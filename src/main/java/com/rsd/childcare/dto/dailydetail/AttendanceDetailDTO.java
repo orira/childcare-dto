@@ -3,13 +3,18 @@ package com.rsd.childcare.dto.dailydetail;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
+
+import com.rsd.childcare.dto.serialiser.CustomTimeDeserialiser;
+
 public class AttendanceDetailDTO extends DailyDetailDTO{
 
 	private Date signInTime;
 	private Date signOutTime;
 	private String signInAuthoriser;
 	private String signOutAuthoriser;
-
+	
+	@JsonDeserialize(using = CustomTimeDeserialiser.class)	                    
 	public Date getSignInTime() {
 		return signInTime;
 	}
@@ -18,6 +23,7 @@ public class AttendanceDetailDTO extends DailyDetailDTO{
 		this.signInTime = signInTime;
 	}
 
+	@JsonDeserialize(using = CustomTimeDeserialiser.class)
 	public Date getSignOutTime() {
 		return signOutTime;
 	}
@@ -42,7 +48,7 @@ public class AttendanceDetailDTO extends DailyDetailDTO{
 		this.signOutAuthoriser = signOutAuthoriser;
 	}	
 	
-	public long getTotalDailyAttendanceTime() {
+	public long returnTotalDailyAttendanceTime() {
 		long duration = signOutTime.getTime() - signInTime.getTime();
 		
 		if(TimeUnit.MILLISECONDS.toHours(duration) >= 1) {

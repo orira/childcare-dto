@@ -2,7 +2,10 @@ package com.rsd.childcare.dto.dailydetail;
 
 import java.util.Date;
 
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
+
 import com.rsd.childcare.dto.categories.ToiletType;
+import com.rsd.childcare.dto.serialiser.CustomTimeDeserialiser;
 
 public class ToiletDetailDTO extends DailyDetailDTO{
 	
@@ -18,6 +21,7 @@ public class ToiletDetailDTO extends DailyDetailDTO{
 		this.toiletRecorder = toiletRecorder;
 	}
 
+	@JsonDeserialize(using = CustomTimeDeserialiser.class)
 	public Date getToiletTime() {
 		return toiletTime;
 	}
