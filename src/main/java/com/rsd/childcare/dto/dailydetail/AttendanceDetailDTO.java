@@ -4,8 +4,10 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.codehaus.jackson.map.annotate.JsonDeserialize;
+import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 import com.rsd.childcare.dto.serialiser.CustomTimeDeserialiser;
+import com.rsd.childcare.dto.serialiser.CustomTimeSerialiser;
 
 public class AttendanceDetailDTO extends DailyDetailDTO{
 
@@ -19,6 +21,7 @@ public class AttendanceDetailDTO extends DailyDetailDTO{
 		return signInTime;
 	}
 
+	@JsonSerialize(using = CustomTimeSerialiser.class)
 	public void setSignInTime(Date signInTime) {
 		this.signInTime = signInTime;
 	}
@@ -28,6 +31,7 @@ public class AttendanceDetailDTO extends DailyDetailDTO{
 		return signOutTime;
 	}
 
+	@JsonSerialize(using = CustomTimeSerialiser.class)
 	public void setSignOutTime(Date signOutTime) {
 		this.signOutTime = signOutTime;
 	}
