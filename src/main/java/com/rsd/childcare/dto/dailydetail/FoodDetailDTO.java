@@ -4,40 +4,40 @@ import com.rsd.childcare.dto.categories.FoodTimeCategory;
 
 public class FoodDetailDTO extends DailyDetailDTO{
 
-	private FoodTimeCategory timeCategory;
-	private String foodAuthoriser;
-	private String foodItem;	
+	private FoodTimeCategory category;
+	private String authoriser;
+	private String type;
 	private String portion;
-
-	public FoodTimeCategory getTimeCategory() {
-		return timeCategory;
+	
+	public FoodTimeCategory getCategory() {
+		return category;
+	}
+	
+	public void setCategory(FoodTimeCategory category) {
+		this.category = category;
+	}
+	
+	public String getAuthoriser() {
+		return authoriser;
 	}
 
-	public void setTimeCategory(FoodTimeCategory timeCategory) {
-		this.timeCategory = timeCategory;
+	public void setAuthoriser(String authoriser) {
+		this.authoriser = authoriser;
 	}
 
-	public String getFoodAuthoriser() {
-		return foodAuthoriser;
+	public String getType() {
+		return type;
 	}
-
-	public void setFoodAuthoriser(String foodAuthoriser) {
-		this.foodAuthoriser = foodAuthoriser;
+	
+	public void setType(String type) {
+		this.type = type;
 	}
-
-	public String getFoodItem() {
-		return foodItem;
-	}
-
-	public void setFoodItem(String foodItem) {
-		this.foodItem = foodItem;
-	}
-
+	
 	public String getPortion() {
 		return portion;
 	}
-
+	
 	public void setPortion(String portion) {
 		this.portion = portion;
-	}	
+	}
 }

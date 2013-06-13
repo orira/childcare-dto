@@ -3,8 +3,8 @@ package com.rsd.childcare.dto.dailydetail;
 import java.util.List;
 
 import org.codehaus.jackson.annotate.JsonSubTypes;
-import org.codehaus.jackson.annotate.JsonTypeInfo;
 import org.codehaus.jackson.annotate.JsonSubTypes.Type;
+import org.codehaus.jackson.annotate.JsonTypeInfo;
 
 public class DataWrapperDTO {
 	
@@ -18,6 +18,7 @@ public class DataWrapperDTO {
 	    @Type(value = SleepDetailDTO.class, name = "Sleep"),
 	    @Type(value = ToiletDetailDTO.class, name = "T")
 	    })
+	
 	List<DailyDetailDTO> dtos;
 
 	public List<DailyDetailDTO> getDtos() {
